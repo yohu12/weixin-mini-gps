@@ -21,9 +21,9 @@ public class GpsRecordDao {
     private JdbcTemplate jdbcTemplate;
 
     public int insert(Gps gps) {
-        String sql = "INSERT INTO `gps` ( `lat`, `lon`, `user_code`, `create_date`) VALUES" +
-                " (?, ?, ?, ?)";
-        int result = jdbcTemplate.update(sql, new Object[]{gps.getLat(), gps.getLon(), "1", new Date()});
+        String sql = "INSERT INTO `gps` ( `lat`, `lon`, `user_code`, `create_date`,`start_flag`) VALUES" +
+                " (?, ?, ?, ?,?)";
+        int result = jdbcTemplate.update(sql, new Object[]{gps.getLat(), gps.getLon(), "1", new Date(), gps.getStartFlag()});
         return result;
     }
 

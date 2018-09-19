@@ -1,3 +1,10 @@
+server:
+  port: 443
+  ssl:
+    key-store: classpath:pi-home.cn.jks
+    key-store-type: JKS
+    key-password: zan13d9446f
+  context-path: /mini-weixin
 debug: true
 logging:
   level:
@@ -15,9 +22,9 @@ wechat:
 spring:
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://pi-home.cn:3306/pi_home?useUnicode=true
+    url: jdbc:mysql://127.0.0.1:3306/pi-home?useUnicode=true
     username: root
-    password: 82370288
+    password: 1234
     max-idle: 10
     max-wait: 10000
     min-idle: 5

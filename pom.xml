@@ -13,7 +13,7 @@
     <groupId>com.github.binarywang</groupId>
     <version>1.0.0-SNAPSHOT</version>
     <artifactId>weixin-java-miniapp-demo</artifactId>
-    <packaging>war</packaging>
+    <packaging>jar</packaging>
 
     <name>spring-boot-demo-for-wechat-miniapp</name>
     <description>Spring Boot Demo with wechat miniapp</description>
@@ -34,11 +34,11 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
-        <dependency>
+        <!--<dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-tomcat</artifactId>
             <scope>provided</scope>
-        </dependency>
+        </dependency>-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-thymeleaf</artifactId>
@@ -104,7 +104,11 @@
             <artifactId>javax.servlet-api</artifactId>
         </dependency>
 
-
+        <dependency>
+            <groupId>org.eclipse.paho</groupId>
+            <artifactId>org.eclipse.paho.client.mqttv3</artifactId>
+            <version>1.2.0</version>
+        </dependency>
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-math3</artifactId>
@@ -121,12 +125,8 @@
         <finalName>mini-weixin</finalName>
         <plugins>
             <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-war-plugin</artifactId>
-                <configuration>
-                    <warSourceExcludes>src/main/resources/**</warSourceExcludes>
-                    <warName>mini-weixin</warName>
-                </configuration>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
         </plugins>
     </build>
